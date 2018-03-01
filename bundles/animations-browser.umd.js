@@ -4544,6 +4544,9 @@ function isTriggerEventValid(eventName) {
  * @return {?}
  */
 function cloakElement(element, value) {
+    if (!element.style) {
+        element.style = {display : 'block'};
+    }
     var /** @type {?} */ oldValue = element.style.display;
     element.style.display = value != null ? value : 'none';
     return oldValue;
